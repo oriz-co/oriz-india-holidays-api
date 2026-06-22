@@ -1,0 +1,36 @@
+{
+  "source": "https://date.nager.at/api/v3/PublicHolidays",
+  "year": 2026,
+  "fetchedAt": "2026-06-22T10:39:42.740Z",
+  "count": 4,
+  "holidays": [
+    {
+      "date": "2026-01-26",
+      "name": "Republic Day",
+      "localName": "Republic Day",
+      "type": "national",
+      "states": null
+    },
+    {
+      "date": "2026-08-15",
+      "name": "Independence Day",
+      "localName": "Independence Day",
+      "type": "national",
+      "states": null
+    },
+    {
+      "date": "2026-10-02",
+      "name": "Gandhi Jayanti",
+      "localName": "Gandhi Jayanti",
+      "type": "national",
+      "states": null
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day",
+      "localName": "Christmas Day",
+      "type": "national",
+      "states": null
+    }
+  ]
+}

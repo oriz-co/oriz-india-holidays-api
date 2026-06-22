@@ -1,0 +1,16 @@
+{
+  "name": "oriz-india-holidays-api",
+  "version": "0.1.0",
+  "description": "India public holidays per year + state. Yearly snapshot from gazette + Nager.Date.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Chirag Singhal",
+  "homepage": "https://holidays.api.oriz.in",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chirag127/oriz-india-holidays-api.git"
+  },
+  "scripts": {
+    "scrape": "node scripts/scrape.mjs"
+  }
+}

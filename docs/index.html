@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oriz India Holidays API</title>
+  <meta name="description" content="India public holidays per year + state. Yearly snapshot from gazette + Nager.Date." />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#ff9933" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { margin-bottom: 0.25rem; }
+    .sub { color: #666; margin-top: 0; }
+    code { background: rgba(127,127,127,0.15); padding: 0.1em 0.35em; border-radius: 3px; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid rgba(127,127,127,0.25); }
+    .badge { display: inline-block; padding: 0.1em 0.5em; border-radius: 999px; background: #ff9933; color: #fff; font-size: 0.8em; }
+    footer { margin-top: 2rem; color: #666; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h1>Oriz India Holidays API <span class="badge">v0.1</span></h1>
+  <p class="sub">India public holidays per year + state. Yearly snapshot.</p>
+
+  <h2>Endpoints</h2>
+  <ul>
+    <li><code>/data/latest.json</code> &mdash; current year</li>
+    <li><code>/data/holidays-YYYY.json</code> &mdash; specific year</li>
+  </ul>
+
+  <h2>Playground &mdash; current year</h2>
+  <div id="playground"><p>Loading...</p></div>
+
+  <footer>
+    Credit: <a href="https://date.nager.at">date.nager.at</a> &middot; Government of India gazette notifications.
+    MIT licensed. <a href="https://github.com/chirag127/oriz-india-holidays-api">Source</a>.
+  </footer>
+
+  <script>
+    fetch("/data/latest.json")
+      .then(r => r.json())
+      .then(d => {
+        const rows = d.holidays.map(h =>
+          `<tr><td>${h.date}</td><td>${h.name}</td><td>${h.type}</td></tr>`
+        ).join("");
+        document.getElementById("playground").innerHTML =
+          `<p>${d.count} holidays for ${d.year} (fetched ${d.fetchedAt})</p>
+           <table><thead><tr><th>Date</th><th>Name</th><th>Type</th></tr></thead><tbody>${rows}</tbody></table>`;
+      })
+      .catch(e => {
+        document.getElementById("playground").innerHTML = `<p>Failed to load: ${e.message}</p>`;
+      });
+  </script>
+</body>
+</html>

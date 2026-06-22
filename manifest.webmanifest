@@ -1,0 +1,22 @@
+{
+  "name": "Oriz India Holidays API",
+  "short_name": "IN Holidays",
+  "description": "India public holidays per year + state.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff9933",
+  "icons": [
+    {
+      "src": "https://oriz.in/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://oriz.in/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

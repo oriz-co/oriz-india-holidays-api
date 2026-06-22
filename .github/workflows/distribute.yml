@@ -1,0 +1,15 @@
+name: distribute
+on:
+  workflow_dispatch:
+
+# PWABuilder placeholder. Run manually to package the PWA into native artifacts.
+# Reference: https://docs.pwabuilder.com/#/builder/cli
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PWABuilder placeholder
+        run: |
+          echo "Placeholder: install @pwabuilder/cli and package https://holidays.api.oriz.in"
+          echo "Example: npx -y @pwabuilder/cli package -p android -u https://holidays.api.oriz.in"
